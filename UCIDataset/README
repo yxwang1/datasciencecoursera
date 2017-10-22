@@ -1,0 +1,28 @@
+I am using 'dplyr' library.
+
+The run_analysis.R code has headings that indicated the 5 tasks that needs to be done. They are in the sequence listed in the assignment requirement except #4, adding the column names were done before other tasks.
+
+The final output file is called tidyDataset.txt. 
+
+It's the result of merging training set with test set, binding in subject, activity label
+number in the columns called subject and activityLabel. The result is then grouped by subject and labelIndex, and summarized over numeric columns with a mean.
+
+Here's summary of the data: (30 subject * 6 activities = 180 rows
+                              561 features + subject + activityLabel = 563 columns)
+
+> dim(tidyDataset)
+[1] 180 563
+
+> head(tidyDataset)
+# A tibble: 6 x 564
+  subject      activityLabel tBodyAcc.mean...X tBodyAcc.mean...Y tBodyAcc.mean...Z
+    <int>              <chr>             <dbl>             <dbl>             <dbl>
+1       1             LAYING         0.2215982      -0.040513953        -0.1132036
+2       1            SITTING         0.2612376      -0.001308288        -0.1045442
+3       1           STANDING         0.2789176      -0.016137590        -0.1106018
+4       1            WALKING         0.2773308      -0.017383819        -0.1111481
+5       1 WALKING_DOWNSTAIRS         0.2891883      -0.009918505        -0.1075662
+6       1   WALKING_UPSTAIRS         0.2554617      -0.023953149        -0.0973020
+# ... with 559 more variables: tBodyAcc.std...X <dbl>, tBodyAcc.std...Y <dbl>,
+#   tBodyAcc.std...Z <dbl>, tBodyAcc.mad...X <dbl>, tBodyAcc.mad...Y <dbl>,
+......
